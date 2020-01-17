@@ -1,0 +1,20 @@
+<div fxFill fxLayout="column" fxLayoutAlign="space-between">
+  <h2 class="heading">Recipe book</h2>
+  <div class = "meals-container">
+    <ng-container *ngFor="let image of data">
+        <div
+            class="meal-card"
+            routerLink="/detail/{{image.id}}">
+            <img class="meal-img" [src]="image.url">
+            <div>Meal #{{image.id}}</div>
+        </div>
+    </ng-container>
+  </div>
+  <mat-paginator *ngIf="(data$ | async) as recipesData" [length]="recipesData.length"
+                [pageSize]="size"
+                [pageIndex]="page"
+                [pageSizeOptions]="[4, 8, 12]"
+                (page)="getData($event, recipesData)">
+  </mat-paginator>
+</div>
+

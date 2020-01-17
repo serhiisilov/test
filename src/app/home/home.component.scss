@@ -1,0 +1,26 @@
+$imgWidth: 300px;
+$imgHeight: 200px;
+
+.heading {
+  text-align: center;
+}
+.meal-img {
+  width: $imgWidth;
+  height: $imgHeight;
+}
+
+.meals-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.meal-card {
+  margin: 20px;
+
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  max-width: 320px;
+}
